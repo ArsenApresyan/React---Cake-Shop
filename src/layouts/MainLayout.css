@@ -1,0 +1,36 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  flex: 1 0 auto;
+} .main-layout {
+  min-height: 100vh;
+  position: relative;
+}
+
+.go-to-top {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.go-to-top:hover {
+  transform: translateY(-5px);
+  color: #ff6b6b;
+}

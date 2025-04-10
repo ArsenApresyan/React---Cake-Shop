@@ -1,0 +1,332 @@
+.product-detail-page {
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 80px);
+}
+
+.product-detail-page .product-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.product-detail-page .product-gallery {
+  position: sticky;
+  top: 2rem;
+}
+
+.product-detail-page .main-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.product-detail-page .main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-detail-page .main-image:hover img {
+  transform: scale(1.05);
+}
+
+.product-detail-page .thumbnail-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.product-detail-page .thumbnail {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.product-detail-page .thumbnail:hover {
+  transform: translateY(-2px);
+}
+
+.product-detail-page .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-detail-page .product-info {
+  padding: 1rem;
+}
+
+.product-detail-page .product-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.product-detail-page .product-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-detail-page .current-price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff4d4d;
+}
+
+.product-detail-page .original-price {
+  font-size: 1.1rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.product-detail-page .product-description {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.product-detail-page .product-options {
+  margin-bottom: 2rem;
+}
+
+.product-detail-page .size-selector,
+.product-detail-page .quantity-selector {
+  margin-bottom: 1.5rem;
+}
+
+.product-detail-page .size-selector h3,
+.product-detail-page .quantity-selector h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.product-detail-page .size-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.product-detail-page .size-btn {
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.product-detail-page .size-btn:hover,
+.product-detail-page .size-btn.active {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.product-detail-page .quantity-and-cart {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-detail-page .quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+}
+
+.product-detail-page .quantity-controls button {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-detail-page .quantity-controls button:hover {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.product-detail-page .quantity-controls span {
+  font-size: 1.1rem;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.product-detail-page .product-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.product-detail-page .align-self-center {
+  align-self: center;
+}
+
+.product-detail-page .add-to-cart-btn,
+.product-detail-page .wishlist-btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product-detail-page .add-to-cart-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  height: 42px;
+  align-self: flex-end;
+}
+
+.product-detail-page .add-to-cart-btn:hover {
+  background-color: #ff3333;
+  transform: translateY(-2px);
+}
+
+.product-detail-page .wishlist-btn {
+  background-color: white;
+  color: #333;
+  border: 2px solid #ddd;
+  flex: 1;
+}
+
+.product-detail-page .wishlist-btn:hover {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+  transform: translateY(-2px);
+}
+
+.product-detail-page .product-details {
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+}
+
+.product-detail-page .ingredients,
+.product-detail-page .nutrition {
+  margin-bottom: 2rem;
+}
+
+.product-detail-page .ingredients h3,
+.product-detail-page .nutrition h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.product-detail-page .ingredients ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.product-detail-page .ingredients li {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.product-detail-page .nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.product-detail-page .nutrition-item {
+  text-align: center;
+}
+
+.product-detail-page .nutrition-item .label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.product-detail-page .nutrition-item .value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+@media (max-width: 1024px) {
+  .product-detail-page .product-detail-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .product-detail-page .product-gallery {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-detail-page {
+    padding: 1rem 0;
+  }
+
+  .product-detail-page .product-title {
+    font-size: 1.5rem;
+  }
+
+  .product-detail-page .quantity-and-cart {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .product-detail-page .add-to-cart-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .product-detail-page .ingredients ul {
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail-page .nutrition-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-detail-page .product-actions {
+    flex-direction: column;
+  }
+
+  .product-detail-page .add-to-cart-btn,
+  .product-detail-page .wishlist-btn {
+    width: 100%;
+  }
+} 

@@ -1,0 +1,140 @@
+.coming-soon {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+              url('//caking-store-newdemo.myshopify.com/cdn/shop/files/image_588.png?v=1721790216') center/cover no-repeat;
+}
+
+.coming-soon-container {
+  max-width: 800px;
+  text-align: center;
+  padding: 4rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.coming-soon-title {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.coming-soon-subtitle {
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.coming-soon-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subscription-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.feature-description {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.notify-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.notify-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.notify-input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+}
+
+.notify-button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.notify-button:hover {
+  background: #ff6b6b;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .coming-soon-container {
+    padding: 2rem;
+  }
+
+  .coming-soon-title {
+    font-size: 2.5rem;
+  }
+
+  .coming-soon-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .subscription-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-title {
+    font-size: 2rem;
+  }
+
+  .coming-soon-container {
+    padding: 1.5rem;
+  }
+} 
