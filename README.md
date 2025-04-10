@@ -2,8 +2,6 @@
 
 A modern, responsive e-commerce platform for a premium bakery, built with React and Redux.
 
-![Sweet Delights Banner](public/assets/images/banner.jpg)
-
 ## 🌟 Features
 
 - **Modern UI/UX**: Clean and intuitive interface with smooth animations
@@ -79,47 +77,3 @@ src/
 ├── services/          # API services
 └── utils/             # Utility functions
 ```
-
-## 🎨 Features in Detail
-
-### Product Display
-- Grid layout for product showcase
-- Category-based filtering
-- Product cards with hover effects
-- Quick view functionality
-- Sale tags and pricing
-
-### User Experience
-- Smooth page transitions
-- Responsive navigation
-- Loading states
-- Error handling
-- Form validation
-
-### Authentication
-- JWT-based authentication
-- Protected routes
-- User profile management
-- Session handling
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Authors
-
-- Your Name - Initial work
-
-## 🙏 Acknowledgments
-
-- Design inspiration from [source]
-- Icons from Font Awesome
-- Images from [source]
