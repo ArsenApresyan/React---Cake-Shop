@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import authReducer from '../features/auth/authSlice';
+import wishlistReducer from '../features/wishlist/wishlistSlice';
 
 // Import other reducers as they are created
 // import boxesReducer from '../features/boxes/boxesSlice';
@@ -9,6 +10,7 @@ import authReducer from '../features/auth/authSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  wishlist: wishlistReducer,
   // Add other reducers here as they are created
   // boxes: boxesReducer,
   // subscription: subscriptionReducer,

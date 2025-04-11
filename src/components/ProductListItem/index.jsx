@@ -1,16 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToWishlist, removeFromWishlist } from '../../features/wishlist/wishlistSlice';
 import './ProductListItem.css';
 
-const ProductListItem = ({ product, onAddToCart, onQuickView, onAddToWishlist }) => {
+const ProductListItem = ({ product, onAddToCart, onQuickView }) => {
   const { id, title, price, originalPrice, image, onSale } = product;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { items } = useSelector((state) => state.wishlist);
+  const { user, isAuthenticated } = useSelector((state) => state.auth);
+  const [isInWishlist, setIsInWishlist] = useState(false);
+
+  useEffect(() => {
+    setIsInWishlist(items.some(item => item.id === id));
+  }, [items, id]);
 
   const handleQuickView = (e) => {
     e.preventDefault();
-    
     navigate(`/product/${id}`);
-    
+  };
+
+  const handleWishlistClick = async () => {
+    if (!isAuthenticated) {
+      // TODO: Show login modal or redirect to login page
+      navigate('/login');
+      return;
+    }
+
+    if (isInWishlist) {
+      await dispatch(removeFromWishlist({ userId: user.id, productId: id }));
+    } else {
+      await dispatch(addToWishlist({ userId: user.id, product }));
+    }
   };
 
   return (
@@ -36,11 +58,11 @@ const ProductListItem = ({ product, onAddToCart, onQuickView, onAddToWishlist })
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>
           <button 
-            className="action-btn wishlist-btn"
-            onClick={() => onAddToWishlist(product)}
-            title="Add to Wishlist"
+            className={`action-btn wishlist-btn ${isInWishlist ? 'active' : ''}`}
+            onClick={handleWishlistClick}
+            title={isInWishlist ? "Remove from Wishlist" : "Add to Wishlist"}
           >
-            <i className="fa-regular fa-heart"></i>
+            <i className={isInWishlist ? "fa-solid fa-heart" : "fa-regular fa-heart"}></i>
           </button>
         </div>
       </div>

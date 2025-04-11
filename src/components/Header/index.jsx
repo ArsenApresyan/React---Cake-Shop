@@ -7,6 +7,7 @@ const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const { items: wishlistItems } = useSelector((state) => state.wishlist);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +60,9 @@ const Header = () => {
           </Link>
           <Link to="/wishlist" className={`icon-button wishlist ${isActive('/wishlist')}`}>
             <i className="fa-solid fa-heart"></i>
-            <span className="cart-count">0</span>
+            {wishlistItems.length > 0 && (
+              <span className="cart-count">{wishlistItems.length}</span>
+            )}
           </Link>
           <Link to="/cart" className={`icon-button cart ${isActive('/cart')}`}>
             <i className="fa-solid fa-shopping-cart"></i>
