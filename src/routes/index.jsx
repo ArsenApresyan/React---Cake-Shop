@@ -1,4 +1,5 @@
 import { Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import MainLayout from '../layouts/MainLayout';
 import Home from '../pages/Home';
 import SweetBoxes from '../pages/SweetBoxes/index';
@@ -6,16 +7,16 @@ import Subscriptions from '../pages/Subscriptions/index';
 import Orders from '../pages/Orders/index';
 import Terms from '../pages/Terms/index';
 import Privacy from '../pages/Privacy/index';
-import Login from '../pages/Login';
+import Login from '../pages/Login/index';
 import Register from '../pages/Register';
 import Products from '../pages/products';
 import About from '../pages/About';
 import ProductDetail from '../pages/ProductDetail';
+import Account from '../pages/Account';
 
 // Protected route wrapper component
 export const ProtectedRoute = ({ children }) => {
-  // TODO: Replace with actual auth check from Redux
-  const isAuthenticated = false; // This should come from Redux state
+  const { isAuthenticated } = useSelector((state) => state.auth);
   
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
@@ -70,6 +71,14 @@ export const publicRoutes = [
 
 // Protected routes that require authentication
 export const protectedRoutes = [
+  {
+    path: '/account',
+    element: (
+      <ProtectedRoute>
+        <Account />
+      </ProtectedRoute>
+    ),
+  },
   {
     path: '/orders',
     element: (

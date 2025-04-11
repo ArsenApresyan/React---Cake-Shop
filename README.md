@@ -33,20 +33,10 @@ A modern, responsive e-commerce platform for a premium bakery, built with React 
 ### Installation
 
 1. Clone the repository
-```bash
-git clone https://github.com/yourusername/sweet-delights.git
-cd sweet-delights
-```
 
 2. Install dependencies
 ```bash
 npm install
-```
-
-3. Create a `.env` file in the root directory and add your environment variables:
-```env
-REACT_APP_API_URL=your_api_url
-REACT_APP_STRIPE_PUBLIC_KEY=your_stripe_public_key
 ```
 
 4. Start the development server
@@ -61,7 +51,6 @@ The application will be available at `http://localhost:5173`
 - [React](https://reactjs.org/) - Frontend framework
 - [Redux Toolkit](https://redux-toolkit.js.org/) - State management
 - [React Router](https://reactrouter.com/) - Routing
-- [Stripe](https://stripe.com/) - Payment processing
 - [Font Awesome](https://fontawesome.com/) - Icons
 - [Vite](https://vitejs.dev/) - Build tool
 

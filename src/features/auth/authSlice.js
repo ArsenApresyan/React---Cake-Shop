@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { localStorageService } from '../../services/localStorageService';
 
 const initialState = {
-  user: null,
-  isAuthenticated: false,
+  user: localStorageService.getUser(),
+  isAuthenticated: !!localStorageService.getToken(),
   loading: false,
-  error: null,
+  error: null
 };
 
 const authSlice = createSlice({
@@ -18,18 +19,14 @@ const authSlice = createSlice({
     loginSuccess: (state, action) => {
       state.loading = false;
       state.isAuthenticated = true;
-      state.user = action.payload;
+      state.user = action.payload.user;
       state.error = null;
+      localStorageService.setToken(action.payload.token);
+      localStorageService.setUser(action.payload.user);
     },
     loginFailure: (state, action) => {
       state.loading = false;
       state.error = action.payload;
-    },
-    logout: (state) => {
-      state.user = null;
-      state.isAuthenticated = false;
-      state.loading = false;
-      state.error = null;
     },
     registerStart: (state) => {
       state.loading = true;
@@ -38,24 +35,37 @@ const authSlice = createSlice({
     registerSuccess: (state, action) => {
       state.loading = false;
       state.isAuthenticated = true;
-      state.user = action.payload;
+      state.user = action.payload.user;
       state.error = null;
+      localStorageService.setToken(action.payload.token);
+      localStorageService.setUser(action.payload.user);
     },
     registerFailure: (state, action) => {
       state.loading = false;
       state.error = action.payload;
     },
-  },
+    logout: (state) => {
+      state.user = null;
+      state.isAuthenticated = false;
+      state.loading = false;
+      state.error = null;
+      localStorageService.clearAuth();
+    },
+    clearError: (state) => {
+      state.error = null;
+    }
+  }
 });
 
 export const {
   loginStart,
   loginSuccess,
   loginFailure,
-  logout,
   registerStart,
   registerSuccess,
   registerFailure,
+  logout,
+  clearError
 } = authSlice.actions;
 
 export default authSlice.reducer; 

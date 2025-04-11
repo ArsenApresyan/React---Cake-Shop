@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './Header.css';
 
 const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +53,9 @@ const Header = () => {
         <div className="header-actions">
           <Link to="/account" className={`icon-button account ${isActive('/account')}`}>
             <i className="fa-solid fa-user"></i>
+            {isAuthenticated && (
+              <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full"></span>
+            )}
           </Link>
           <Link to="/wishlist" className={`icon-button wishlist ${isActive('/wishlist')}`}>
             <i className="fa-solid fa-heart"></i>
